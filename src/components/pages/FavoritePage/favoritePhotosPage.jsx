@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { removePhoto, editDescription} from "../../../store";
 
-import { removePhoto, editDescription } from "../../../store";
-
-// Components
-import SearchBar from '../../searchbar/searchbar';
+//import SearchBar from '../../searchbar/searchbar';
 import ImageList from '../../imageList/imageListFav';
 import { Dropdown } from "../../dropdown";
 import PhotoEdit from "../../imageShow/imageEdit";
 
+import { ImageListFav } from "../../imageList/imageListFav";
+//Searchform
+import { Modal } from "../../modalEdit";
+import { saveAs } from "file-saver";
+
 function FavoritePage () {
   const { favoriteGallery } = useSelector((state) => state.favorite.favoriteGallery);
   const dispatch = useDispatch();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImg, setModalImg] = useState(null);
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [term, setTerm] = useState("");
   const [activeFilter, setActiveFilter] = useState("Date");
@@ -22,9 +27,9 @@ function FavoritePage () {
     let filteredPhoto;
     if (term.length) {
         filteredPhoto = favoriteGallery.filter(
-        (img) =>
-          img.description &&
-          img.description.toLowerCase().includes(term.toLowerCase())
+        (image) =>
+          image.description &&
+          image.description.toLowerCase().includes(term.toLowerCase())
       );
     } else {
         filteredPhoto = favoriteGallery;
@@ -88,7 +93,6 @@ function FavoritePage () {
       ) : (
         <>
           <div className="">
-            <SearchBar term={term} />
             <Dropdown
               activeFilter={activeFilter}
               setActiveFilter={setActiveFilter}

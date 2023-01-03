@@ -12,7 +12,14 @@ function ImageShow({image, markAsFav}) {
             <div className="card-content">
                 <div className="media">
                     <div className="media-content">
-                        <p className="title is-4 is-flex is-justify-content-space-between">{image.user.name} <IoMdHeart onClick = {markAsFav}className='is-larger has-text-link'/></p>
+                        <div className="is-flex is-flex-direction-row is-justify-content-space-between">
+                            <p className="title is-4">{image.user.name}</p>
+                            <IoMdHeart                 
+                                id={image.id}
+                                onClick={() => {markAsFav(image.id, image)}}
+                                className='is-larger has-text-link is-size-3'
+                            />    
+                        </div>
                         <p className="subtitle is-6">Likes: {image.likes}</p>
                     </div>
                 </div>

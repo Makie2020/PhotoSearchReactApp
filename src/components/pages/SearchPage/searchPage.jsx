@@ -19,20 +19,20 @@ function SearchPage (){
         event.preventDefault();
         dispatch(fetchImages({ term: term }));
     };
-
-    const markAsFav = (id, img) => {
+    const markAsFav = (id, image) => {
+        console.log(image)
         dispatch(
           addPhoto({
-            id: img.id,
-            description: img.description,
-            width: img.width,
-            height: img.height,
-            urlFull: img.urls.full,
-            urlThumb: img.urls.thumb,
-            likes: img.likes,
+            id: image.id,
+            description: image.description,
+            width: image.width,
+            height: image.height,
+            urlFull: image.urls.full,
+            urlThumb: image.urls.thumb,
+            likes: image.likes,
             date: new Date().toLocaleString(),
             dateToSort: Date.now(),
-            tags: img.tags ? img.tags : [],
+            tags: image.tags ? image.tags : [],
           })
         );
       };
@@ -41,7 +41,7 @@ function SearchPage (){
         <div>
             <SearchBar handleSubmit={handleSubmit} setTerm={setTerm}/>
             {isLoading ? (<Loader />) : (
-            <><ImageList listImages={listImages} markAsFav= {markAsFav} /></>)}
+            <><ImageList listImages={listImages} markAsFav= {markAsFav}/></>)}
         </div>
     )  
 }  

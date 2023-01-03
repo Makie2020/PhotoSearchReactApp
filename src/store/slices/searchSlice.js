@@ -1,6 +1,5 @@
 import { createSlice} from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { addPhoto } from './favoritePhotosSlice';
 import axios from 'axios';
 
 export const fetchImages = createAsyncThunk(
@@ -42,12 +41,9 @@ const searchSlice = createSlice({
   reducers: {
     changeSearchTerm(state, action) {
       state.searchTerm = action.payload;
-    },
+    }, 
   },
   extraReducers(builder) {
-    /*builder.addCase(addPhoto, (state, action) => {
-        state.name = '';
-    }),*/
     builder.addCase(fetchImages.pending, (state, action) => {
       state.isLoading = true;
     });
@@ -62,6 +58,6 @@ const searchSlice = createSlice({
   }
 });
 
-export const { changeSearchTerm, addCar} = searchSlice.actions;
+export const { changeSearchTerm} = searchSlice.actions;
 export const selectImages = (state) => state.search.data;
 export const searchReducer = searchSlice.reducer;

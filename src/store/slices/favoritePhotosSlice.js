@@ -1,4 +1,3 @@
-// Redux
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -25,7 +24,6 @@ export const favoritePhotoSlice = createSlice({
       );
       setLocalStorage(state.favoriteGallery);
     },
-
     editDescription: (state, action) => {
       state.favoriteGallery = state.favoriteGallery.map((obj) => {
         if (obj.id === action.payload.id) {
