@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
+import NavBar from './components/navbar/navbar';
+import HomePage from './components/pages/HomePage/homePage';
+import SearchPage from './components/pages/SearchPage/searchPage';
+import FavoritePage from './components/pages/FavoritePage/favoritePhotosPage';
+import Footer from './components/footer/footer';
+import "./sass/mystyles.scss"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavBar/>
+        <Routes>  
+          <Route exact path='/' element={< HomePage />}></Route>  
+          <Route exact path='/search' element={< SearchPage />}></Route>  
+          <Route exact path='/favorite' element={< FavoritePage />}></Route>  
+        </Routes>
+        <Footer/>  
+    </Router>
   );
 }
 
 export default App;
+
