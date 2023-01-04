@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BsFillPencilFill, BsDownload, BsXLg } from "react-icons/bs";
+import { BsFillPencilFill, BsDownload, BsXLg} from "react-icons/bs";
 import './modal.css'
 
 function Modal ({ modalImg, saveEdit, downloadFav,closeModal})  {
@@ -14,7 +14,7 @@ function Modal ({ modalImg, saveEdit, downloadFav,closeModal})  {
           <BsXLg className="delete" aria-label="close" onClick={() => {closeModal()}}/>
         </header>
         <section className="modal-card-body has-background-grey-lighter">
-          <img src={modalImg.urlThumb} alt= {modalImg.alt}/>
+          <img src={modalImg.full} alt= {modalImg.alt}/>
           <div className="is-flex">
             <h2 className="has-text-weight-semibold mr-2">Description:</h2>
                {isEditing ? (
@@ -23,13 +23,14 @@ function Modal ({ modalImg, saveEdit, downloadFav,closeModal})  {
                   placeholder="Enter a new description"
                   onChange={(e) => {setEditedDescription(e.target.value)}}/>
                 ) : modalImg.description === null ? (<p className="is-italic">Untiteled</p>
-                ) : ( <p className="mr-2">{modalImg.description}</p>)}
-              <BsFillPencilFill classname='ml-2 is-danger'onClick={() => {setIsEditing(!isEditing)}}/> 
+                ) : ( <p className="mr-4">{modalImg.description}</p>)}
+              <BsFillPencilFill classname='ml-6 is-danger'onClick={() => {setIsEditing(!isEditing)}}/> 
           </div>
               <p><span className="is-underlined">Likes:</span> {modalImg.likes}</p>
               <p><span className="is-underlined">Width:</span> {modalImg.width}</p>    
               <p><span className="is-underlined">Height:</span> {modalImg.height}</p> 
               <p><span className="is-underlined">Date added:</span> {modalImg.date}</p>   
+              <BsDownload className="icon is-medium" onClick={() => {downloadFav(modalImg)}}/>
         </section>
         <footer className="modal-card-foot">
           <button className="button is-success" onClick={() => {saveEdit(modalImg.id, editedDescription);closeModal()}}>Save changes</button>

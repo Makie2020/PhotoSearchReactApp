@@ -16,17 +16,12 @@ function ImageShowfav({image, openModal, deleteFavorite}) {
             </div>
             <div className="card-content">
                 <div className="media">
-                    <div className="media-content">                
-                  
-                        <p className="title is-4">{image.user}</p>
-                        <p className="subtitle is-8">  {image.description ? `${image.description} `: 'Untitled'}</p>
-                        <p>Date added: {image.date}</p>
+                    <div className="media-content">       
+                        <p className="title is-8">  {image.description ? `${image.description} `: <span className="is-italic">Untitled</span>} </p>       
+                        <p><span className="is-underlined">Likes:</span> {image.likes}</p>
+                        <p><span className= "is-underlined">Date added: </span> {image.date}</p>
                     </div>
-                </div>
-                <div className="content">
-                    {image.alt}
-                </div>  
-             
+                </div>           
             </div>
          </div>
      </div>

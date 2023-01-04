@@ -17,7 +17,7 @@ function ImageShow({image, markedAsFav}) {
                             <IoMdHeart                 
                                 id={image.id}
                                 onClick={() => {markedAsFav(image.id, image)}}
-                                className='is-larger has-text-link is-size-3'
+                                className='is-larger has-text-link is-size-3 heart'
                             />    
                         </div>
                         <p className="subtitle is-6">Likes: {image.likes}</p>
