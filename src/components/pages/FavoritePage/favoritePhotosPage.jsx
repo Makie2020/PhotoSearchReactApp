@@ -1,42 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removePhoto, editDescription} from "../../../store";
-
-//import SearchBar from '../../searchbar/searchbar';
-import ImageList from '../../imageList/imageListFav';
-import { Dropdown } from "../../dropdown";
-import PhotoEdit from "../../imageShow/imageEdit";
-
-import { ImageListFav } from "../../imageList/imageListFav";
-//Searchform
-import { Modal } from "../../modalEdit";
+import Dropdown from "../../dropdown";
+import  Modal from "../../modal/modalEdit";
+import ImageListFav from "../../imageList/imageListFav";
+import SearchFavPhotos from "../../searchFavPhotos";
 import { saveAs } from "file-saver";
 
 function FavoritePage () {
-  const { favoriteGallery } = useSelector((state) => state.favorite.favoriteGallery);
+  const { favoriteGallery } = useSelector((state) => state.favorite);
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImg, setModalImg] = useState(null);
-  const [isEditOpen, setIsEditOpen] = useState(false);
   const [term, setTerm] = useState("");
   const [activeFilter, setActiveFilter] = useState("Date");
-  const [filteredPhoto, setFilteredPhoto] = useState(favoriteGallery);
+  const [filteredImages, setFilteredPhoto] = useState(favoriteGallery);
 
-
-  useEffect(() => {
-    let filteredPhoto;
+ useEffect(() => {
+    let filteredImages;
     if (term.length) {
-        filteredPhoto = favoriteGallery.filter(
+      filteredImages = favoriteGallery.filter(
         (image) =>
           image.description &&
           image.description.toLowerCase().includes(term.toLowerCase())
       );
     } else {
-        filteredPhoto = favoriteGallery;
-    }})
-    setFilteredPhoto(filteredPhoto);
+      filteredImages = favoriteGallery;
+    }
+    setFilteredPhoto(filteredImages)
+    
 
-    const orderedImages = [{...favoriteGallery}];
+    const orderedImages = [...favoriteGallery];
     switch (activeFilter) {
       case "Date":
         orderedImages.sort((a, b) => b.dateToSort - a.dateToSort);
@@ -54,53 +48,55 @@ function FavoritePage () {
         break;
     }
     setFilteredPhoto(orderedImages);
+  }, [term, activeFilter, favoriteGallery]);
 
   const deleteFavorite = (id) => {
     dispatch(removePhoto(id));
   };
 
-  const openEdit = (id) => {
-    setIsEditOpen(true);
+  const openModal = (image) => {
+    setIsModalOpen(true);
+    setModalImg(image);
   };
 
-  const closeEdit = () => {
-    setIsEditOpen(false);
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   const saveEdit = (id, editedDescription) => {
     dispatch(editDescription({ id: id, description: editedDescription }));
   };
-/*
+
   const downloadFav = (url, id) => {
     saveAs(url, `${id}.jpeg`);
   };
-*/
   return (
     <div
       className=""
       onKeyUp={(e) => {
         if (e.key === "Escape") {
-          closeEdit();
+          closeModal();
         }
       }}
-    >
-      {isEditOpen ? (
-        <PhotoEdit
-          saveEdit={saveEdit}
-          //downloadFav={downloadFav}
-          closeEdit={closeEdit}
-        />
-      ) : (
-        <>
+    > 
+    {isModalOpen ? (
+      <Modal
+        modalImg={modalImg}
+        saveEdit={saveEdit}
+        downloadFav={downloadFav}
+        closeModal={closeModal}
+      /> ) : ( <>
           <div className="">
+            <SearchFavPhotos setTerm={setTerm} />
             <Dropdown
               activeFilter={activeFilter}
               setActiveFilter={setActiveFilter}
             />
           </div>
-          <ImageList
-            openEdit={openEdit}
+          <ImageListFav
+            openModal={openModal}
             deleteFavorite={deleteFavorite}
+            filteredImages={filteredImages}
           />
         </>
       )}

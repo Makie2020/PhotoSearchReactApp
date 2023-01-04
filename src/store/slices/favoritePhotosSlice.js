@@ -13,23 +13,23 @@ export const favoritePhotoSlice = createSlice({
   initialState: initialState,
   reducers: {
     addPhoto: (state, action) => {
-      if ([...state.favoriteGallery].every((obj) => obj.id !== action.payload.id)) {
+      if ([...state.favoriteGallery].every((photo) => photo.id !== action.payload.id)) {
         state.favoriteGallery = [...state.favoriteGallery, action.payload];
         setLocalStorage(state.favoriteGallery);
       }
     },
     removePhoto: (state, action) => {
       state.favoriteGallery = state.favoriteGallery.filter(
-        (obj) => obj.id !== action.payload
+        (photo) => photo.id !== action.payload
       );
       setLocalStorage(state.favoriteGallery);
     },
     editDescription: (state, action) => {
-      state.favoriteGallery = state.favoriteGallery.map((obj) => {
-        if (obj.id === action.payload.id) {
-          obj.description = action.payload.description;
+      state.favoriteGallery = state.favoriteGallery.map((photo) => {
+        if (photo.id === action.payload.id) {
+          photo.description = action.payload.description;
         }
-        return obj;
+        return photo;
       });
       setLocalStorage(state.favoriteGallery);
     },

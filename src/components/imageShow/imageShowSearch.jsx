@@ -1,6 +1,6 @@
 import { IoMdHeart } from "react-icons/io";
 
-function ImageShow({image, markAsFav}) {
+function ImageShow({image, markedAsFav}) {
     return (
      <div>
         <div className="card">
@@ -16,7 +16,7 @@ function ImageShow({image, markAsFav}) {
                             <p className="title is-4">{image.user.name}</p>
                             <IoMdHeart                 
                                 id={image.id}
-                                onClick={() => {markAsFav(image.id, image)}}
+                                onClick={() => {markedAsFav(image.id, image)}}
                                 className='is-larger has-text-link is-size-3'
                             />    
                         </div>

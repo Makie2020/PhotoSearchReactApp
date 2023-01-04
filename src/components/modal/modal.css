@@ -1,0 +1,7 @@
+#modal {
+    display: block;
+    top: 10%;
+}
+.modal-card-body {
+    background: rgba(255, 221, 210, 0.5);
+}

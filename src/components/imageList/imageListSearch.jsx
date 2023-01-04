@@ -1,10 +1,11 @@
 import './imageList.css'
 import ImageShow from "../imageShow/imageShowSearch"
 
-function ImageList({listImages, markAsFav}) {
+function ImageList({listImages, markedAsFav}) {
+    console.log(listImages)
     const  renderImages = listImages.map((image) => {
         return (           
-            <ImageShow key={image.id} image={image} markAsFav= {markAsFav}/>
+            <ImageShow key={image.id} image={image} markedAsFav= {markedAsFav}/>
         )})
 
     return (

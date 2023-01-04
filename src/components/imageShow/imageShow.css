@@ -1,0 +1,12 @@
+.icon {
+    position: absolute;
+    color: antiquewhite;
+    bottom:0; 
+    
+}
+.icon:last-child{
+    right: 0;
+}
+
+.image { position: relative; }
+.image img { display: block; }

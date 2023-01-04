@@ -10,6 +10,7 @@ $green-light: #83C5BE;
 $white: #FFFFFF;
 $pink-light: #FFDDD2;
 $pink: #E29578;
+$red: #f5edeb;
 
 // Update Bulma's global variables
 $family-sans-serif: "Nunito", sans-serif;
@@ -25,8 +26,7 @@ $input-border-color: transparent;
 $input-shadow: none;
 $footer-padding: 2rem;
 $button-color: $pink;
-
-
+$modal-card-head-background-color: $red;
 
 // Import only what you need from Bulma
 @import '../bulma/sass/utilities/_all.sass';
