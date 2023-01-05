@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/PhotoSearchReactApp/static/css/main.b9b692e3.css",
+    "main.js": "/PhotoSearchReactApp/static/js/main.35d45c5d.js",
+    "static/media/imageHomePage.jpg": "/PhotoSearchReactApp/static/media/imageHomePage.b4b1ce439f01da3b982f.jpg",
+    "index.html": "/PhotoSearchReactApp/index.html",
+    "main.b9b692e3.css.map": "/PhotoSearchReactApp/static/css/main.b9b692e3.css.map",
+    "main.35d45c5d.js.map": "/PhotoSearchReactApp/static/js/main.35d45c5d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b9b692e3.css",
+    "static/js/main.35d45c5d.js"
+  ]
+}
