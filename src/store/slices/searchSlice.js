@@ -2,6 +2,8 @@ import { createSlice} from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+
+
 export const fetchImages = createAsyncThunk(
   "photos/fetchImages",
   async({term}) => {
@@ -9,7 +11,7 @@ export const fetchImages = createAsyncThunk(
   if(term && term !== '') {
   const response = await axios.get('https://api.unsplash.com/search/photos', {
       headers: {
-          Authorization: 'Client-ID process.env.REACT_APP_CLIENT_ID',
+          Authorization: `Client-ID ${process.env.REACT_APP_CLIENT_ID}`,
       },
       params: {
           query: term,
@@ -20,7 +22,7 @@ export const fetchImages = createAsyncThunk(
   } else {
       const response = await axios.get('https://api.unsplash.com/photos/random/', {
           headers: {
-              Authorization: 'Client-ID RqpP5oOAufjHctJL0qhCH_y48HusCCNjg6Tb1-2V75E',
+              Authorization: `Client-ID ${process.env.REACT_APP_CLIENT_ID}`,
           },
           params: {
               query: term,

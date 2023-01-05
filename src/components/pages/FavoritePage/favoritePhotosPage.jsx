@@ -15,7 +15,6 @@ function FavoritePage () {
   const [term, setTerm] = useState("");
   const [activeFilter, setActiveFilter] = useState("Date");
   const [filteredImages, setFilteredPhoto] = useState(favoriteGallery);
-  const body = document.querySelector("body")
 
  useEffect(() => {
     let filteredImage;
