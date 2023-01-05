@@ -9,7 +9,7 @@ export const fetchImages = createAsyncThunk(
   if(term && term !== '') {
   const response = await axios.get('https://api.unsplash.com/search/photos', {
       headers: {
-          Authorization: 'Client-ID RqpP5oOAufjHctJL0qhCH_y48HusCCNjg6Tb1-2V75E',
+          Authorization: 'Client-ID process.env.REACT_APP_CLIENT_ID',
       },
       params: {
           query: term,

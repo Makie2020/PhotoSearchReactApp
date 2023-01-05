@@ -6,7 +6,9 @@ import FavoritePage from './components/pages/FavoritePage/favoritePhotosPage';
 import Footer from './components/footer/footer';
 import "./sass/mystyles.scss"
 
+
 function App() {
+  require('dotenv').config({ path: '../.env' })
   return (
     <Router>
       <NavBar/>
