@@ -1,17 +1,25 @@
 import React from "react";
 import { BsSearch } from "react-icons/bs";
 
-function SearchFavPhotos ({ setTerm }) {
+function SearchFavPhotos ({ setTerm}) {
   return (
-    <form
-      id="searchFav">
-      <div className="relative">
-        <div className="flex absolute inset-y-0 items-center">
-            <label><BsSearch className='mr-2'/>Search by description</label>
-            <input onChange={(event) => {event.preventDefault(); setTerm(event.target.value);}}></input>
-        </div>
-      </div>
-    </form>
-  );
+    <div className="field">
+      <p className="control has-icons-left">
+        <input 
+          className="input bulma-placeholder-mixin" 
+          type="text" 
+          style= {{color: 'hsl(0deg, 0%, 86%)', width: '350px', border: '2px solid'}} 
+          placeholder="Search by description"
+          onChange={(event) => {event.preventDefault(); setTerm(event.target.value);}}
+          >
+          </input>
+          <span className="icon is-small is-left">
+            <BsSearch/>
+          </span>
+      </p>
+    </div>
+
+  )
 };
+
 export default SearchFavPhotos

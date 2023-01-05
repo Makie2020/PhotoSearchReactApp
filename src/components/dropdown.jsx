@@ -4,8 +4,8 @@ function Dropdown ({ activeFilter, setActiveFilter }) {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div style={{marginLeft: '70%'}}>
-      <div className="dropdown is-hoverable my-4 ml-6">
+    <div>
+      <div className="dropdown is-hoverable">
         <div className="dropdown-trigger" >
           <button className="button" onClick={() => setToggle(!toggle)} aria-controls="dropdown-menu">
             {`Sorting by ${activeFilter}`} 

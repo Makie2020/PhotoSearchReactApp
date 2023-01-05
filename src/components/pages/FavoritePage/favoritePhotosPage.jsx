@@ -15,19 +15,20 @@ function FavoritePage () {
   const [term, setTerm] = useState("");
   const [activeFilter, setActiveFilter] = useState("Date");
   const [filteredImages, setFilteredPhoto] = useState(favoriteGallery);
+  const body = document.querySelector("body")
 
  useEffect(() => {
-    let filteredImages;
+    let filteredImage;
     if (term.length) {
-      filteredImages = favoriteGallery.filter(
+      filteredImage = favoriteGallery.filter(
         (image) =>
           image.description &&
           image.description.toLowerCase().includes(term.toLowerCase())
       );
     } else {
-      filteredImages = favoriteGallery;
+      filteredImage = favoriteGallery;
     }
-    setFilteredPhoto(filteredImages)
+    setFilteredPhoto(filteredImage)
     
 
     const orderedImages = [...favoriteGallery];
@@ -80,14 +81,35 @@ function FavoritePage () {
       }}
     > 
     {isModalOpen ? (
+      <div style={{ overflow : "hidden"}}>
+      <section class="hero is-white is-fullheight">
+        <div class="hero-body" onClick={() => closeModal()} >
+        </div>
+      </section>
       <Modal
         modalImg={modalImg}
         saveEdit={saveEdit}
         downloadFav={downloadFav}
         closeModal={closeModal}
-      /> ) : ( <>
-          <div className="">
-            <SearchFavPhotos setTerm={setTerm} />
+        /> 
+      </div>) : ( <>
+          <section className="hero ml-6 pl-6" >
+            <div className="hero-body">
+              <p className="title">
+              Your favorite photos gallery
+              </p>
+              <p className="subtitle">
+                On this page you have the option to search by description, filter by date added, height, width and likes. 
+                In addition, you can edit the title description and also download the photo. 
+              </p>
+            </div>
+          </section>
+          <div className=" is-flex is-justify-content-space-evenly mt-4">
+            <SearchFavPhotos
+            term = {term}
+            setTerm={setTerm} 
+            favoriteGallery={favoriteGallery}
+            />
             <Dropdown
               activeFilter={activeFilter}
               setActiveFilter={setActiveFilter}
@@ -97,6 +119,7 @@ function FavoritePage () {
             openModal={openModal}
             deleteFavorite={deleteFavorite}
             filteredImages={filteredImages}
+            className= 'mx-6'
           />
         </>
       )}

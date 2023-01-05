@@ -15,6 +15,7 @@ function SearchPage (){
     const handleSubmit = (event) => {
         event.preventDefault();
         dispatch(fetchImages({ term: term }));
+        event.target.reset();
     };
     const markedAsFav = (id, image) => {
          dispatch(
@@ -22,6 +23,7 @@ function SearchPage (){
             id: image.id,
             description: image.description,
             alt: image.alt_description,
+
             width: image.width,
             height: image.height,
             urlFull: image.urls.full,

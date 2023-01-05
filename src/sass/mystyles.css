@@ -5470,16 +5470,16 @@ a.tag:hover {
   color: hsl(0deg, 0%, 21%);
 }
 .select select::-moz-placeholder, .textarea::-moz-placeholder, .input::-moz-placeholder {
-  color: rgba(54, 54, 54, 0.3);
+  color: #E29578;
 }
 .select select::-webkit-input-placeholder, .textarea::-webkit-input-placeholder, .input::-webkit-input-placeholder {
-  color: rgba(54, 54, 54, 0.3);
+  color: #E29578;
 }
 .select select:-moz-placeholder, .textarea:-moz-placeholder, .input:-moz-placeholder {
-  color: rgba(54, 54, 54, 0.3);
+  color: #E29578;
 }
 .select select:-ms-input-placeholder, .textarea:-ms-input-placeholder, .input:-ms-input-placeholder {
-  color: rgba(54, 54, 54, 0.3);
+  color: #E29578;
 }
 .select select:hover, .textarea:hover, .input:hover, .select select.is-hovered, .is-hovered.textarea, .is-hovered.input {
   border-color: hsl(0deg, 0%, 71%);
