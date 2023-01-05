@@ -1,4 +1,5 @@
 {
+  "homepage":"https://Makie2020.github.io/PhotoSearchReactApp",
   "name": "udemy-searchapp",
   "version": "0.1.0",
   "main": "webpack.config.js",
@@ -26,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -40,7 +43,7 @@
       "not dead",
       "not op_mini all"
     ],
-    "development": [
+    "development": [  
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
@@ -48,6 +51,7 @@
   },
   "devDependencies": {
     "css-loader": "^6.7.3",
+    "gh-pages": "^4.0.0",
     "mini-css-extract-plugin": "^2.7.2",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
