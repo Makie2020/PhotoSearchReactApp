@@ -9,7 +9,7 @@ function NavBar() {
         <div>
             <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
-                    <NavLink className="navbar-item" to='/'>
+                    <NavLink className="navbar-item" to='PhotoSearchReactApp/'>
                         <img src= {logo} width="112" height="28" alt='Logo Buscophoto'/>
                     </NavLink>
                     <h1 className="title is-4 pt-4" >Buscophoto</h1>
@@ -29,9 +29,9 @@ function NavBar() {
                 </div>
                 <div id="navbarBasicExample" className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
                     <div className  ="navbar-end">
-                        <NavLink className="navbar-item" to='/'>Home</NavLink>
-                        <NavLink className="navbar-item" to='/search'>Search</NavLink>
-                        <NavLink className="navbar-item" to='/favorite'>Favorite Photos</NavLink>
+                        <NavLink className="navbar-item" to='PhotoSearchReactApp/'>Home</NavLink>
+                        <NavLink className="navbar-item" to='PhotoSearchReactApp/search'>Search</NavLink>
+                        <NavLink className="navbar-item" to='PhotoSearchReactApp/favorite'>Favorite Photos</NavLink>
                     </div>    
                 </div>
             </nav>
