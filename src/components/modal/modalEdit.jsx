@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState} from "react";
 import { BsFillPencilFill, BsDownload, BsXLg} from "react-icons/bs";
 import './modal.css'
 import axios from "axios";
@@ -8,12 +8,6 @@ import { saveAs } from 'file-saver'
 function Modal ({ modalImg, saveEdit, closeModal})  {
   const [isEditing, setIsEditing] = useState(false);
   const [editedDescription, setEditedDescription] = useState("");
-  useEffect(() => {
-    document.body.classList.add('overflow-hidden');
-    return () => {
-      document.body.classList.remove('overflow-hidden');
-    };
-  }, []);
 
   const downloadImage = async() => {
     axios.get(`https://api.unsplash.com/photos/${modalImg.id}/download?ixid=MnwxMTc4ODl8MHwxfHNlYXJjaHwxfHxwdXBweXxlbnwwfHx8fDE2MTc3NTA2MTM`, {
@@ -47,8 +41,10 @@ function Modal ({ modalImg, saveEdit, closeModal})  {
                       placeholder="Enter a new description"
                       onChange={(e) => {setEditedDescription(e.target.value)}}/>
                     ) : modalImg.description === null ? (<p className="is-italic">Untiteled</p>
-                    ) : ( <p className="mr-4">{modalImg.description}</p>)}
-                  <BsFillPencilFill className='ml-6 is-danger'onClick={() => {setIsEditing(!isEditing)}}/> 
+                    ) : 
+                    ( <p className="mr-4">{modalImg.description}</p>)
+                    }
+                  <BsFillPencilFill className='ml-6 is-danger' onClick={()=>{setIsEditing(!isEditing)}}/>
               </div>
                   <p><span className="is-underlined">Likes:</span> {modalImg.likes}</p>
                   <p><span className="is-underlined">Width:</span> {modalImg.width}</p>    

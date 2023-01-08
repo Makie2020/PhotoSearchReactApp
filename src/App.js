@@ -11,9 +11,9 @@ function App() {
     <Router>
       <NavBar/>
         <Routes>  
-          <Route exact path='/' element={< HomePage />}></Route>  
-          <Route exact path='/search' element={< SearchPage />}></Route>  
-          <Route exact path='/favorite' element={< FavoritePage />}></Route>  
+          <Route exact path='PhotoSearchReactApp/' element={< HomePage />}></Route>  
+          <Route exact path='PhotoSearchReactApp/search' element={< SearchPage />}></Route>  
+          <Route exact path='PhotoSearchReactApp/favorite' element={< FavoritePage />}></Route>  
         </Routes>
         <Footer/>  
     </Router>

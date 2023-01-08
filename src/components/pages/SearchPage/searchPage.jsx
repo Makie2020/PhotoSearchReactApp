@@ -20,7 +20,6 @@ function SearchPage (){
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = listImages.slice(indexOfFirstPost, indexOfLastPost);
-    console.log(currentPosts)
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -46,8 +45,6 @@ function SearchPage (){
         );
       };
 
-   
-    
       const paginate = (pageNumber) => {
          setCurrentPage(pageNumber);
       };

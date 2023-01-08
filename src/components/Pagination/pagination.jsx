@@ -7,8 +7,8 @@ const Paginate = ({ postsPerPage, totalPosts, paginate, previousPage, nextPage }
   
   return (
      <div className="pagination is-centered mb-6" role="navigation" aria-label="pagination">
-       <a class = "pagination-previous ml-6" onClick={previousPage}>Previous</a>
-       <a class = "pagination-next mr-6" onClick={nextPage}>Next page</a>
+       <a className = "pagination-previous ml-6" onClick={previousPage}>Previous</a>
+       <a className = "pagination-next mr-6" onClick={nextPage}>Next page</a>
         <ul className='pagination-list'>
            {pageNumbers.map((number) => (
               <li

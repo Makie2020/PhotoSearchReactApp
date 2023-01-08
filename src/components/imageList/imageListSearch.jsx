@@ -2,7 +2,6 @@ import './imageList.css'
 import ImageShow from "../imageShow/imageShowSearch"
 
 function ImageList({listImages, markedAsFav}) {
-    console.log(listImages)
     if (listImages.length === 0)  {
         return (
             <section className="hero is-white is-fullheight">
