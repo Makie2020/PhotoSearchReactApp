@@ -71,16 +71,16 @@ function FavoritePage () {
     > 
     {isModalOpen
     ? (
-        <div onClick={() => {closeModal()}}>
-        <section className="hero is-white is-fullheight ">
-          <div className="hero-body" >
-          </div>
-        </section>
-        <Modal
-          modalImg={modalImg}
-          saveEdit={saveEdit}
-          closeModal={closeModal}
-          /> 
+        <div>
+          <section className="hero is-white is-fullheight ">
+            <div className="hero-body" >
+            </div>
+          </section>
+          <Modal  
+            modalImg={modalImg}
+            saveEdit={saveEdit}
+            closeModal={closeModal}
+            /> 
         </div>
         )
       : ( <>

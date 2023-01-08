@@ -23,7 +23,7 @@ function Modal ({ modalImg, saveEdit, closeModal})  {
 
   return (
     <div >
-      <div onClick={() => {closeModal()}} className="fixed inset-0 bg-gray-300 opacity-80"> 
+      <div className="fixed inset-0 bg-gray-300 opacity-80"> 
       </div>
       <div className="modal fixed inset-80 p-10 bg-white" id="modal">
         <div className="modal-card">
