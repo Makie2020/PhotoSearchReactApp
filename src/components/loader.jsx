@@ -1,6 +1,8 @@
 function Loader () {
     return(
-        <div>LOADIND</div>
+        <div className="container content">
+            <h1>The content is loading</h1>
+        </div>
     )
 }
 export default Loader

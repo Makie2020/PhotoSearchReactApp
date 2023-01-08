@@ -4,32 +4,17 @@ import { removePhoto, editDescription} from "../../../store";
 import Dropdown from "../../dropdown";
 import  Modal from "../../modal/modalEdit";
 import ImageListFav from "../../imageList/imageListFav";
-import SearchFavPhotos from "../../searchFavPhotos";
-import { saveAs } from "file-saver";
+import { BsSearch } from "react-icons/bs";
 
 function FavoritePage () {
   const { favoriteGallery } = useSelector((state) => state.favorite);
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImg, setModalImg] = useState(null);
-  const [term, setTerm] = useState("");
   const [activeFilter, setActiveFilter] = useState("Date");
-  const [filteredImages, setFilteredPhoto] = useState(favoriteGallery);
+  let [filteredImages, setFilteredPhoto] = useState(favoriteGallery);
 
- useEffect(() => {
-    let filteredImage;
-    if (term.length) {
-      filteredImage = favoriteGallery.filter(
-        (image) =>
-          image.description &&
-          image.description.toLowerCase().includes(term.toLowerCase())
-      );
-    } else {
-      filteredImage = favoriteGallery;
-    }
-    setFilteredPhoto(filteredImage)
-    
-
+  useEffect(() => {
     const orderedImages = [...favoriteGallery];
     switch (activeFilter) {
       case "Date":
@@ -48,7 +33,7 @@ function FavoritePage () {
         break;
     }
     setFilteredPhoto(orderedImages);
-  }, [term, activeFilter, favoriteGallery]);
+  }, [activeFilter, favoriteGallery]);
 
   const deleteFavorite = (id) => {
     dispatch(removePhoto(id));
@@ -66,32 +51,39 @@ function FavoritePage () {
   const saveEdit = (id, editedDescription) => {
     dispatch(editDescription({ id: id, description: editedDescription }));
   };
+  
+  const searchItems = (term) => {
+    if (term !== '') {
+      filteredImages = favoriteGallery.filter(favoriteImage => favoriteImage.description?.toLowerCase().includes(term.toLowerCase()));
+      setFilteredPhoto(filteredImages)
+    } else {
+      setFilteredPhoto(favoriteGallery)
+    }
+  }
 
-  const downloadFav = (url, id) => {
-    saveAs(url, `${id}.jpeg`);
-  };
   return (
     <div
-      className=""
       onKeyUp={(e) => {
         if (e.key === "Escape") {
           closeModal();
         }
       }}
     > 
-    {isModalOpen ? (
-      <div style={{ overflow : "hidden"}}>
-      <section class="hero is-white is-fullheight">
-        <div class="hero-body" onClick={() => closeModal()} >
+    {isModalOpen
+    ? (
+        <div onClick={() => {closeModal()}}>
+        <section className="hero is-white is-fullheight ">
+          <div className="hero-body" >
+          </div>
+        </section>
+        <Modal
+          modalImg={modalImg}
+          saveEdit={saveEdit}
+          closeModal={closeModal}
+          /> 
         </div>
-      </section>
-      <Modal
-        modalImg={modalImg}
-        saveEdit={saveEdit}
-        downloadFav={downloadFav}
-        closeModal={closeModal}
-        /> 
-      </div>) : ( <>
+        )
+      : ( <>
           <section className="hero ml-6 pl-6" >
             <div className="hero-body">
               <p className="title">
@@ -103,23 +95,37 @@ function FavoritePage () {
               </p>
             </div>
           </section>
-          <div className=" is-flex is-justify-content-space-evenly mt-4">
-            <SearchFavPhotos
-            term = {term}
-            setTerm={setTerm} 
-            favoriteGallery={favoriteGallery}
-            />
+          <div className=" is-flex is-justify-content-space-evenly mt-4 mb-4">
+            <div>
+              <div className="field">
+                <p className="control has-icons-left">
+                  <input 
+                    className="input bulma-placeholder-mixin" 
+                    type="text" 
+                    style= {{color: 'hsl(0deg, 0%, 86%)', width: '350px', border: '2px solid'}} 
+                    placeholder="Search by description"
+                    onChange={(e) => searchItems(e.target.value)}
+                    >
+                    </input>
+                    <span className="icon is-small is-left">
+                      <BsSearch/>
+                    </span>
+                </p>
+              </div>
+            </div>
             <Dropdown
               activeFilter={activeFilter}
               setActiveFilter={setActiveFilter}
             />
           </div>
-          <ImageListFav
-            openModal={openModal}
-            deleteFavorite={deleteFavorite}
-            filteredImages={filteredImages}
-            className= 'mx-6'
-          />
+          <div>
+              <ImageListFav
+                openModal={openModal}
+                deleteFavorite={deleteFavorite}
+                filteredImages={filteredImages}
+                className= 'mx-6'
+              /> 
+          </div>  
         </>
       )}
     </div>

@@ -7,7 +7,6 @@ import axios from 'axios';
 export const fetchImages = createAsyncThunk(
   "photos/fetchImages",
   async({term}) => {
-  console.log(term)
   if(term && term !== '') {
   const response = await axios.get('https://api.unsplash.com/search/photos', {
       headers: {
@@ -15,18 +14,18 @@ export const fetchImages = createAsyncThunk(
       },
       params: {
           query: term,
-          per_page: 12,
+          per_page: 48,
       },
   });
   return response.data.results;
   } else {
       const response = await axios.get('https://api.unsplash.com/photos/random/', {
           headers: {
-              Authorization: `Client-ID ${process.env.REACT_APP_CLIENT_ID}`,
+              Authorization: 'Client-ID RqpP5oOAufjHctJL0qhCH_y48HusCCNjg6Tb1-2V75E',
           },
           params: {
               query: term,
-              count: 12,
+              count: 48,
           },
       });
       return response.data;
