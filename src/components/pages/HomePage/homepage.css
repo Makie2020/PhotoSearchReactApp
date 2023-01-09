@@ -1,6 +1,6 @@
-.homePage {
+#background {
     background-image: url("../../../images/imageHomePage.jpg");
     background-size: cover;
     width: auto;
-    height: 90vh;
+    height: 80vh;
 }

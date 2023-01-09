@@ -1,5 +1,6 @@
-import { BsFillTrashFill, BsPencil } from "react-icons/bs";
+import { BsFillTrashFill } from "react-icons/bs";
 import './imageShow.css'
+import { MdOutlineModeEditOutline } from "react-icons/md";
 
 function ImageShowfav({image, openModal, deleteFavorite}) {
    return (
@@ -9,15 +10,18 @@ function ImageShowfav({image, openModal, deleteFavorite}) {
                 <figure className="image is-4by3">
                     <img src={image.urlThumb} alt= {image.alt}/>
                     <div className="is-flex is-justify-content-space-between">
-                        <BsPencil onClick={() => {openModal(image)}} className= "icon is-small ml-2 mb-3"/>
                         <BsFillTrashFill onClick={() => {deleteFavorite(image.id)}} className= "icon is-small mr-2 mb-3"/>
+                       
                     </div>
                 </figure>
             </div>
             <div className="card-content">
                 <div className="media">
-                    <div className="media-content">       
-                        <p className="title is-8">  {image.description ? `${image.description} `: <span className="is-italic">Untitled</span>} </p>       
+                    <div className="media-content">  
+                        <div className="is-flex  is-flex-direction-row is-justify-content-space-between">
+                            <p className="title is-4">  {image.description ? `${image.description} `: <span className="is-italic">Untitled</span>} 
+                            <MdOutlineModeEditOutline onClick={() => {openModal(image)}} className= "is-medium ml-2 mb-3" id='pen'/> </p>         
+                        </div>  
                         <p><span className="is-underlined">Likes:</span> {image.likes}</p>
                         <p><span className= "is-underlined">Date added: </span> {image.date}</p>
                     </div>

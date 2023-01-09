@@ -1,8 +1,16 @@
+.card {
+  height:450px;
+}
 .icon {
     position: absolute;
     color: antiquewhite;
     bottom:0; 
+    width:50px;
     
+} 
+.heart {
+  min-width: 50px;
+  height: 35px;
 }
 .icon:last-child{
     right: 0;
@@ -19,4 +27,6 @@
   background-color: #FFDDD2;
   box-shadow: 0 2px #666;
   transform: translateY(4px);}
-
+#pen {
+  color: #006D77;
+}
