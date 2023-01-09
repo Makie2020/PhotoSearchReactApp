@@ -1,12 +1,10 @@
 .card {
-  height:450px;
+  min-height:400px;
 }
 .icon {
     position: absolute;
     color: antiquewhite;
     bottom:0; 
-    width:50px;
-    
 } 
 .heart {
   min-width: 50px;
@@ -29,4 +27,7 @@
   transform: translateY(4px);}
 #pen {
   color: #006D77;
+}
+.media{
+  height: 100%;
 }

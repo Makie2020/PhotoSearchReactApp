@@ -1,10 +1,7 @@
 .image-list{
-    columns: 4 200px;
+    columns: 4 180px;
     column-gap: 20px;
     row-gap: 20px;
-}
-.background {
-    background-color: #E29578;
 }
 img{
     width: 100%;
@@ -19,7 +16,7 @@ img{
     margin-bottom: 5%;
 }
 .card-search {
-    width: 40%;
+    width: 30%;
     justify-content: center;
     align-items: center;
   }

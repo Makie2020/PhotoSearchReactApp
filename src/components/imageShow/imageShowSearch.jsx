@@ -14,7 +14,7 @@ function ImageShow({image, markedAsFav}) {
                 <div className="media">
                     <div className="media-content">
                         <div className="is-flex is-flex-direction-row is-justify-content-space-between">
-                        <p className="title is-4">  {image.alt_description ? `${image.alt_description} `: <span className="is-italic">Untitled</span>} </p>  
+                        <p className="title is-6">  {image.alt_description ? `${image.alt_description} `: <span className="is-italic">Untitled</span>} </p>  
                             <IoMdHeart                 
                                 id={image.id}
                                 onClick={() => {markedAsFav(image.id, image)}}
