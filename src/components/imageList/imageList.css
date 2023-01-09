@@ -26,4 +26,6 @@ img{
     width: auto;
     height: 65vh;
   }
-  
+  .background {
+    background-color: #E29578
+  }

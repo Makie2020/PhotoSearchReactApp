@@ -1,3 +1,4 @@
+import { GrFormNext,GrFormPrevious } from "react-icons/gr";
 const Paginate = ({ postsPerPage, totalPosts, paginate, previousPage, nextPage }) => {
   const pageNumbers = [];
 
@@ -6,9 +7,9 @@ const Paginate = ({ postsPerPage, totalPosts, paginate, previousPage, nextPage }
   }
   
   return (
-     <div className="pagination is-centered mb-6" role="navigation" aria-label="pagination">
-       <a className = "pagination-previous ml-6" onClick={previousPage}>Previous</a>
-       <a className = "pagination-next mr-6" onClick={nextPage}>Next page</a>
+     <div className="pagination is-centered  is-rounded mb-6" role="navigation" aria-label="pagination">
+       <a className = "pagination-previous is-centered ml-6" onClick={previousPage}><GrFormPrevious/></a>
+       <a className = "pagination-next mr-6" onClick={nextPage}><GrFormNext/></a>
         <ul className='pagination-list'>
            {pageNumbers.map((number) => (
               <li

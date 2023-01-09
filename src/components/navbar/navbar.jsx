@@ -12,7 +12,7 @@ function NavBar() {
                     <NavLink className="navbar-item" to='PhotoSearchReactApp/'>
                         <img src= {logo} width="112" height="28" alt='Logo Buscophoto'/>
                     </NavLink>
-                    <h1 className="title is-4 pt-4" >Buscophoto</h1>
+                    <h1 className="title is-4 pt-4 has-text-white" >Buscophoto</h1>
                     <a 
                     onClick={() => {
                         setisActive(!isActive)

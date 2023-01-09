@@ -1,4 +1,5 @@
 import { IoMdHeart } from "react-icons/io";
+import './imageShow.css'
 
 function ImageShow({image, markedAsFav}) {
     console.log(image)
@@ -21,7 +22,6 @@ function ImageShow({image, markedAsFav}) {
                                 className='is-larger has-text-link is-medium heart'
                             />    
                         </div>
-                        <p className="subtitle is-6">Likes: {image.likes}</p>
                     </div>
                 </div>
             </div>

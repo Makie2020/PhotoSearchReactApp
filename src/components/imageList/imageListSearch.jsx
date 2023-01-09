@@ -43,7 +43,7 @@ function ImageList({listImages, markedAsFav}) {
 
     return (
         <div>
-            <div className='image-list container pb-6 mb-6'>{renderImages}</div>
+            <div className='image-list container pb-6 mb-6 background'>{renderImages}</div>
             <Paginate
             postsPerPage={postsPerPage}
             totalPosts={listImages.length}

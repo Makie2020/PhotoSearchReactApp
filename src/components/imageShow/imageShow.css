@@ -1,5 +1,5 @@
 .card {
-  min-height:400px;
+  min-height:375px;
 }
 .icon {
     position: absolute;
@@ -17,16 +17,16 @@
 .image { position: relative; }
 .image img { display: block; }
 
-.heart:hover {
-  background-color: #FFDDD2;
-}
 
 .heart:active {
   background-color: #FFDDD2;
-  box-shadow: 0 2px #666;
   transform: translateY(4px);}
 #pen {
   color: #006D77;
+}
+#trashcan{
+  color:white;
+  background-color: #006D77;
 }
 .media{
   height: 100%;
