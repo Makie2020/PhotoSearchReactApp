@@ -11,7 +11,6 @@ function ImageShowfav({image, openModal, deleteFavorite}) {
                     <img src={image.urlThumb} alt= {image.alt}/>
                     <div className="is-flex is-justify-content-space-between">
                         <BsFillTrashFill onClick={() => {deleteFavorite(image.id)}} className= "icon is-small mr-2 mb-3" id='trashcan'/>
-                       
                     </div>
                 </figure>
             </div>

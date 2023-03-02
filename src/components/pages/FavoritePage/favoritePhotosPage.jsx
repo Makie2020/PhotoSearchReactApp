@@ -106,10 +106,10 @@ function FavoritePage () {
                     placeholder="Search by description"
                     onChange={(e) => searchItems(e.target.value)}
                     >
-                    </input>
-                    <span className="icon is-small is-left">
-                      <BsSearch/>
-                    </span>
+                  </input>
+                  <span className="icon is-small is-left">
+                    <BsSearch/>
+                  </span>
                 </p>
               </div>
             </div>
