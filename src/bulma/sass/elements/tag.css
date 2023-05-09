@@ -53,9 +53,9 @@
 
 .tag:not(body) {
   align-items: center;
-  background-color: hsl(0deg, 0%, 96%);
+  background-color: hsl(0, 0%, 96%);
   border-radius: 4px;
-  color: hsl(0deg, 0%, 29%);
+  color: hsl(0, 0%, 29%);
   display: inline-flex;
   font-size: 0.75rem;
   height: 2em;
@@ -70,23 +70,23 @@
   margin-right: -0.375rem;
 }
 .tag:not(body).is-white {
-  background-color: hsl(0deg, 0%, 100%);
-  color: hsl(0deg, 0%, 4%);
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 4%);
 }
 .tag:not(body).is-black {
-  background-color: hsl(0deg, 0%, 4%);
-  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(0, 0%, 4%);
+  color: hsl(0, 0%, 100%);
 }
 .tag:not(body).is-light {
-  background-color: hsl(0deg, 0%, 96%);
+  background-color: hsl(0, 0%, 96%);
   color: rgba(0, 0, 0, 0.7);
 }
 .tag:not(body).is-dark {
-  background-color: hsl(0deg, 0%, 21%);
+  background-color: hsl(0, 0%, 21%);
   color: #fff;
 }
 .tag:not(body).is-primary {
-  background-color: hsl(171deg, 100%, 41%);
+  background-color: hsl(171, 100%, 41%);
   color: #fff;
 }
 .tag:not(body).is-primary.is-light {
@@ -94,7 +94,7 @@
   color: #00947e;
 }
 .tag:not(body).is-link {
-  background-color: hsl(229deg, 53%, 53%);
+  background-color: hsl(229, 53%, 53%);
   color: #fff;
 }
 .tag:not(body).is-link.is-light {
@@ -102,7 +102,7 @@
   color: #3850b7;
 }
 .tag:not(body).is-info {
-  background-color: hsl(207deg, 61%, 53%);
+  background-color: hsl(207, 61%, 53%);
   color: #fff;
 }
 .tag:not(body).is-info.is-light {
@@ -110,7 +110,7 @@
   color: #296fa8;
 }
 .tag:not(body).is-success {
-  background-color: hsl(153deg, 53%, 53%);
+  background-color: hsl(153, 53%, 53%);
   color: #fff;
 }
 .tag:not(body).is-success.is-light {
@@ -118,7 +118,7 @@
   color: #257953;
 }
 .tag:not(body).is-warning {
-  background-color: hsl(44deg, 100%, 77%);
+  background-color: hsl(44, 100%, 77%);
   color: rgba(0, 0, 0, 0.7);
 }
 .tag:not(body).is-warning.is-light {
@@ -126,7 +126,7 @@
   color: #946c00;
 }
 .tag:not(body).is-danger {
-  background-color: hsl(348deg, 86%, 61%);
+  background-color: hsl(348, 86%, 61%);
   color: #fff;
 }
 .tag:not(body).is-danger.is-light {

@@ -5,6 +5,8 @@ import { addPhoto } from '../../../store/slices/favoritePhotosSlice';
 import SearchBar from '../../searchbar/searchbar';
 import ImageList from '../../imageList/imageListSearch';
 import Loader from '../../loader';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
    
 function SearchPage (){  
     const dispatch = useDispatch();
@@ -34,6 +36,7 @@ function SearchPage (){
             tags: image.tags ? image.tags : [],
           })
         );
+        toast("You have added the images succesfully to your favourite photos!");
       };
     return (
         <div className='mx-6'>
@@ -44,6 +47,7 @@ function SearchPage (){
                 : (
                     <>
                   <ImageList key={listImages} listImages={listImages} markedAsFav={markedAsFav}/>   
+                  <ToastContainer />
               </>)
             }
         </div>

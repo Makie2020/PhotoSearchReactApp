@@ -1,5 +1,5 @@
 html {
-  background-color: hsl(0deg, 0%, 100%);
+  background-color: hsl(0, 0%, 100%);
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -39,14 +39,14 @@ pre {
 }
 
 body {
-  color: hsl(0deg, 0%, 29%);
+  color: hsl(0, 0%, 29%);
   font-size: 1em;
   font-weight: 400;
   line-height: 1.5;
 }
 
 a {
-  color: hsl(229deg, 53%, 53%);
+  color: hsl(229, 53%, 53%);
   cursor: pointer;
   text-decoration: none;
 }
@@ -54,11 +54,11 @@ a strong {
   color: currentColor;
 }
 a:hover {
-  color: hsl(0deg, 0%, 21%);
+  color: hsl(0, 0%, 21%);
 }
 
 code {
-  background-color: hsl(0deg, 0%, 96%);
+  background-color: hsl(0, 0%, 96%);
   color: #da1039;
   font-size: 0.875em;
   font-weight: normal;
@@ -66,7 +66,7 @@ code {
 }
 
 hr {
-  background-color: hsl(0deg, 0%, 96%);
+  background-color: hsl(0, 0%, 96%);
   border: none;
   display: block;
   height: 2px;
@@ -93,7 +93,7 @@ span {
 }
 
 strong {
-  color: hsl(0deg, 0%, 21%);
+  color: hsl(0, 0%, 21%);
   font-weight: 700;
 }
 
@@ -103,8 +103,8 @@ fieldset {
 
 pre {
   -webkit-overflow-scrolling: touch;
-  background-color: hsl(0deg, 0%, 96%);
-  color: hsl(0deg, 0%, 29%);
+  background-color: hsl(0, 0%, 96%);
+  color: hsl(0, 0%, 29%);
   font-size: 0.875em;
   overflow-x: auto;
   padding: 1.25rem 1.5rem;
@@ -127,5 +127,5 @@ table th:not([align]) {
   text-align: inherit;
 }
 table th {
-  color: hsl(0deg, 0%, 21%);
+  color: hsl(0, 0%, 21%);
 }/*# sourceMappingURL=generic.css.map */

@@ -1,8 +1,8 @@
 .card {
-  background-color: hsl(0deg, 0%, 100%);
+  background-color: hsl(0, 0%, 100%);
   border-radius: 0.25rem;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
-  color: hsl(0deg, 0%, 29%);
+  color: hsl(0, 0%, 29%);
   max-width: 100%;
   position: relative;
 }
@@ -25,7 +25,7 @@
 
 .card-header-title {
   align-items: center;
-  color: hsl(0deg, 0%, 21%);
+  color: hsl(0, 0%, 21%);
   display: flex;
   flex-grow: 1;
   font-weight: 700;
@@ -73,7 +73,7 @@
 
 .card-footer {
   background-color: transparent;
-  border-top: 1px solid hsl(0deg, 0%, 93%);
+  border-top: 1px solid hsl(0, 0%, 93%);
   align-items: stretch;
   display: flex;
 }
@@ -88,7 +88,7 @@
   padding: 0.75rem;
 }
 .card-footer-item:not(:last-child) {
-  border-right: 1px solid hsl(0deg, 0%, 93%);
+  border-right: 1px solid hsl(0, 0%, 93%);
 }
 
 .card .media:not(:last-child) {
